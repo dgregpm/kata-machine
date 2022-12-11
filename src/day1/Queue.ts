@@ -30,6 +30,7 @@ export default class Queue<T> {
         }
     }
     deque(): T | undefined {
+        let tmp;
         if(this.length === 0){return undefined;}
         const value = this.head?.val;
         this.head = this.head?.next;

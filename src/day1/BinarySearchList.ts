@@ -29,3 +29,7 @@ export default function bs_list(haystack: number[], needle: number): boolean {
     }
     return false;
 }
+
+export function bs_list2(haystack: number[], needle: number): boolean {
+    
+}

@@ -18,16 +18,13 @@ export default class Queue<T> {
     enqueue(item: T): void {
         if(!item){return;}
         const node = new Node<T>(item);
-        if(this.length === 0) {
+        if(this.length === 0 || !this.tail) {
             this.head = this.tail = node;
-            this.length++;
         } else if(this.length > 0) {
-            if(this.tail){
-                this.tail.next = node;
-                this.tail = node;
-                this.length++;
-            }
+            this.tail.next = node;
+            this.tail = node;
         }
+        this.length++;
     }
     deque(): T | undefined {
         if(this.length === 0){return undefined;}
@@ -38,6 +35,12 @@ export default class Queue<T> {
     }
     peek(): T | undefined {
         if(this.length === 0){return undefined;}
-        return this.head?.val
+        return this.head?.val;
     }
 }
+
+const q = new Queue();
+q.enqueue(4);
+q.deque();
+q.enqueue(5);
+console.log(q);

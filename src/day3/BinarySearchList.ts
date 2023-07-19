@@ -8,6 +8,10 @@ export default function bs_list(haystack: number[], needle: number): boolean {
             return true;
         } else if(haystack[m] > needle){
             hi = m;
-        } else if(haystack[m] < needle)
+        } else if(haystack[m] < needle){
+            lo = m+1;
+        }
+        m = Math.floor((hi + lo)/2);
     }
+    return false;
 }

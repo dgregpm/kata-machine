@@ -78,6 +78,8 @@ export default function solve(maze: string[], wall: string, start: Point, end: P
         seen.push(new Array(maze[0].length).fill(false));
     }
     //printMaze(result);
+    printMaze(result);
+    console.log('');
     helper(maze,wall,end,start,seen,result);
     printMaze(result);
     return result;
